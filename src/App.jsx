@@ -16,22 +16,22 @@ function App() {
 
       {/* calculator buttons */}
       <button className="big-button">AC</button>
-      <button>DEL</button>
-      <button>/</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>*</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>+</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>-</button>
-      <button>.</button>
-      <button>0</button>
+      <button className="normal-button">DEL</button>
+      <button className="normal-button">/</button>
+      <button className="normal-button">1</button>
+      <button className="normal-button">2</button>
+      <button className="normal-button">3</button>
+      <button className="normal-button">*</button>
+      <button className="normal-button">4</button>
+      <button className="normal-button">5</button>
+      <button className="normal-button">6</button>
+      <button className="normal-button">+</button>
+      <button className="normal-button">7</button>
+      <button className="normal-button">8</button>
+      <button className="normal-button">9</button>
+      <button className="normal-button">-</button>
+      <button className="normal-button">.</button>
+      <button className="normal-button">0</button>
       <button className="big-button">=</button>
     </div>
   )

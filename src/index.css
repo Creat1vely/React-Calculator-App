@@ -1,0 +1,53 @@
+/* general / reset styles */
+*, *::after, *::before {
+    box-sizing: border-box;
+
+    margin: none;
+    padding: 0px;
+    border: none;
+    outline: none;
+}
+
+.calculator {
+    margin: 2rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat( 4, 6rem );
+    grid-template-rows: minmax( 7rem, auto ) repeat( 5, 6rem );
+}
+
+.big-button {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 0.75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.preview-value {
+    font-size: 1.3rem;
+}
+.main-value {
+    font-size: 2.6rem;
+}
+
+
+.normal-button,
+.big-button {
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: thin solid white;
+}
+.normal-button:hover,
+.big-button:hover {
+    background-color: lightgray;
+}
