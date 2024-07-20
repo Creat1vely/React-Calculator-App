@@ -232,115 +232,136 @@ function App() {
 
 
   return (
-    // calculator app container
-    <div className='calculator'>
+    // app's container
+    <div className="app">
+      {/* creatively title */}
+      <h1 className="creatively-title">
+        React Calculator App ( from creat1vely )
+      </h1>
 
-      {/* calculator output section */}
-      <div className="output">
+      {/* calculator app container */}
+      <div className='calculator'>
 
-        {/* calculator preview output */}
-        <div className="preview-value">
-          { formatValue( state.previousValue ) } { state.operation }
+        {/* calculator output section */}
+        <div className="output">
+
+          {/* calculator preview output */}
+          <div className="preview-value">
+            { formatValue( state.previousValue ) } { state.operation }
+          </div>
+
+          {/* calculator main output */}
+          <div className="main-value">
+            { formatValue( state.currentValue ) }
+          </div>
         </div>
 
-        {/* calculator main output */}
-        <div className="main-value">
-          { formatValue( state.currentValue ) }
-        </div>
+        {/* calculator buttons */}
+
+        {/* calculator clear button */}
+        <button className="big-button" onClick={ () => {
+            dispatch( { type: CAlCULATOR_FUNCTION.CLEAR_CALCULATOR } )
+          }}>AC</button>
+
+        {/* calculator delete button */}
+        <button className="normal-button" onClick={ () => {
+            dispatch( { type: CAlCULATOR_FUNCTION.DELETE_NUMBER } )
+          }}>DEL</button>
+
+        {/* calculator operand button */}
+        <button className="normal-button" 
+          onClick={ () => {
+            dispatch( { type: CAlCULATOR_FUNCTION.CHOOSE_OPERATION, payload: { operand: "/"} })
+          }}>/</button>
+
+        {/* calculator digit buttons */}
+        <button className="normal-button" 
+          onClick={ () => { 
+              dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 1 }  } ) 
+            } }>1</button>
+        <button className="normal-button"
+          onClick={ () => { 
+              dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 2 }  } ) 
+            } }>2</button>
+        <button className="normal-button"
+          onClick={ () => { 
+              dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 3 }  } ) 
+            } }>3</button>
+
+        {/* calculator operand button */}
+        <button className="normal-button" 
+          onClick={ () => {
+            dispatch( { type: CAlCULATOR_FUNCTION.CHOOSE_OPERATION, payload: { operand: "*"} })
+          }}>*</button>
+
+        {/* calculator digit button */}
+        <button className="normal-button"
+          onClick={ () => { 
+              dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 4 }  } ) 
+            } }>4</button>
+        <button className="normal-button"
+          onClick={ () => { 
+              dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 5 }  } ) 
+            } }>5</button>
+        <button className="normal-button"
+          onClick={ () => { 
+              dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 6 }  } ) 
+            } }>6</button>
+
+        {/* calculator operand button */}
+        <button className="normal-button" 
+          onClick={ () => {
+            dispatch( { type: CAlCULATOR_FUNCTION.CHOOSE_OPERATION, payload: { operand: "+"} })
+          }}>+</button>
+
+        {/* calculator digit button */}
+        <button className="normal-button"
+          onClick={ () => { 
+              dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 7 }  } ) 
+            } }>7</button>
+        <button className="normal-button"
+          onClick={ () => { 
+              dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 8 }  } ) 
+            } }>8</button>
+        <button className="normal-button"
+          onClick={ () => { 
+              dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 9 }  } ) 
+            } }>9</button>
+        
+        {/* calculator operand button */}
+        <button className="normal-button" 
+          onClick={ () => {
+            dispatch( { type: CAlCULATOR_FUNCTION.CHOOSE_OPERATION, payload: { operand: "-"} })
+          }}>-</button>
+
+        {/* calculator digit button */}
+        <button className="normal-button"
+          onClick={ () => { 
+              dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload:  { digit: "." }  } ) 
+            } }>.</button>
+        <button className="normal-button"
+          onClick={ () => { 
+              dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 0 }  } ) 
+            } }>0</button>
+
+        {/* calculator evaluate button */}
+        <button className="big-button" onClick={ () => {
+            dispatch( { type: CAlCULATOR_FUNCTION.PERFORM_OPERATION } )
+          }}>=</button>
       </div>
 
-      {/* calculator buttons */}
-
-      {/* calculator clear button */}
-      <button className="big-button" onClick={ () => {
-          dispatch( { type: CAlCULATOR_FUNCTION.CLEAR_CALCULATOR } )
-        }}>AC</button>
-
-      {/* calculator delete button */}
-      <button className="normal-button" onClick={ () => {
-          dispatch( { type: CAlCULATOR_FUNCTION.DELETE_NUMBER } )
-        }}>DEL</button>
-
-      {/* calculator operand button */}
-      <button className="normal-button" 
-        onClick={ () => {
-          dispatch( { type: CAlCULATOR_FUNCTION.CHOOSE_OPERATION, payload: { operand: "/"} })
-        }}>/</button>
-
-      {/* calculator digit buttons */}
-      <button className="normal-button" 
-        onClick={ () => { 
-            dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 1 }  } ) 
-          } }>1</button>
-      <button className="normal-button"
-        onClick={ () => { 
-            dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 2 }  } ) 
-          } }>2</button>
-      <button className="normal-button"
-        onClick={ () => { 
-            dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 3 }  } ) 
-          } }>3</button>
-
-      {/* calculator operand button */}
-      <button className="normal-button" 
-        onClick={ () => {
-          dispatch( { type: CAlCULATOR_FUNCTION.CHOOSE_OPERATION, payload: { operand: "*"} })
-        }}>*</button>
-
-      {/* calculator digit button */}
-      <button className="normal-button"
-        onClick={ () => { 
-            dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 4 }  } ) 
-          } }>4</button>
-      <button className="normal-button"
-        onClick={ () => { 
-            dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 5 }  } ) 
-          } }>5</button>
-      <button className="normal-button"
-        onClick={ () => { 
-            dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 6 }  } ) 
-          } }>6</button>
-
-      {/* calculator operand button */}
-      <button className="normal-button" 
-        onClick={ () => {
-          dispatch( { type: CAlCULATOR_FUNCTION.CHOOSE_OPERATION, payload: { operand: "+"} })
-        }}>+</button>
-
-      {/* calculator digit button */}
-      <button className="normal-button"
-        onClick={ () => { 
-            dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 7 }  } ) 
-          } }>7</button>
-      <button className="normal-button"
-        onClick={ () => { 
-            dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 8 }  } ) 
-          } }>8</button>
-      <button className="normal-button"
-        onClick={ () => { 
-            dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 9 }  } ) 
-          } }>9</button>
-      
-      {/* calculator operand button */}
-      <button className="normal-button" 
-        onClick={ () => {
-          dispatch( { type: CAlCULATOR_FUNCTION.CHOOSE_OPERATION, payload: { operand: "-"} })
-        }}>-</button>
-
-      {/* calculator digit button */}
-      <button className="normal-button"
-        onClick={ () => { 
-            dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload:  { digit: "." }  } ) 
-          } }>.</button>
-      <button className="normal-button"
-        onClick={ () => { 
-            dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: 0 }  } ) 
-          } }>0</button>
-
-      {/* calculator evaluate button */}
-      <button className="big-button" onClick={ () => {
-          dispatch( { type: CAlCULATOR_FUNCTION.PERFORM_OPERATION } )
-        }}>=</button>
+      {/* creatively links */}
+      <div className="creatively-links">
+        <a href="" className="creatively-link">
+          view code on github
+        </a>
+        <a href="" className="creatively-link">
+          learn how to create this app ( youtube )
+        </a>
+        <a href="" className="creatively-link">
+          learn web development @ creat1vely
+        </a>
+      </div>
     </div>
   )
 }
