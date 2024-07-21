@@ -1,6 +1,10 @@
 import { useReducer } from "react";
+
+// import creatively branding components
 import CreativelyTitle from "./creatively-branding/CreativelyTitle";
 import CreativelyLinks from "./creatively-branding/CreativelyWebDevLinks";
+
+
 
 // define calculator functions 
 const CAlCULATOR_FUNCTION = {
