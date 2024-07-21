@@ -1,4 +1,6 @@
 import { useReducer } from "react";
+import CreativelyTitle from "./creatively-branding/CreativelyTitle";
+import CreativelyLinks from "./creatively-branding/CreativelyWebDevLinks";
 
 // define calculator functions 
 const CAlCULATOR_FUNCTION = {
@@ -235,9 +237,7 @@ function App() {
     // app's container
     <div className="app">
       {/* creatively title */}
-      <h1 className="creatively-title">
-        React Calculator App ( from creat1vely )
-      </h1>
+      <CreativelyTitle title="React Calculator App"/>
 
       {/* calculator app container */}
       <div className='calculator'>
@@ -337,7 +337,7 @@ function App() {
         {/* calculator digit button */}
         <button className="normal-button"
           onClick={ () => { 
-              dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload:  { digit: "." }  } ) 
+              dispatch( { type: CAlCULATOR_FUNCTION.ADD_NUMBER, payload: { digit: "." }  } ) 
             } }>.</button>
         <button className="normal-button"
           onClick={ () => { 
@@ -351,17 +351,7 @@ function App() {
       </div>
 
       {/* creatively links */}
-      <div className="creatively-links">
-        <a href="" className="creatively-link">
-          view code on github
-        </a>
-        <a href="" className="creatively-link">
-          learn how to create this app ( youtube )
-        </a>
-        <a href="" className="creatively-link">
-          learn web development @ creat1vely
-        </a>
-      </div>
+      <CreativelyLinks />
     </div>
   )
 }

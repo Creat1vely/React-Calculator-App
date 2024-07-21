@@ -1,0 +1,28 @@
+/* styling the creatively title */
+.creatively-title {
+    font-size: 1.8rem;
+    text-align: center;
+    color: lightblue;
+    margin: 0rem auto 3rem;
+}
+.creatively-title > small {
+    font-size: 0.75em;
+}
+
+
+/* styling the creatively-links */
+.creatively-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 0.75rem;
+    margin: 4rem 0rem 0rem;
+}
+.creatively-link {
+    color: tomato;
+    text-transform: capitalize;
+}
+.creatively-link::before {
+    content: "- ";
+}
