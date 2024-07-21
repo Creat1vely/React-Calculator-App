@@ -19,10 +19,16 @@ function CreativelyLinks({ githubLink, youtubeLink, creativelyLink }) {
 }
 
 
+CreativelyLinks.defaultProps = {
+    githubLink: "",
+    youtubeLink: "",
+    creativelyLink: "",
+}
+
 CreativelyLinks.propTypes = {
-    githubLink: PropTypes.string,
-    youtubeLink: PropTypes.string,
-    creativelyLink: PropTypes.string,
+    githubLink: PropTypes.string.isRequired,
+    youtubeLink: PropTypes.string.isRequired,
+    creativelyLink: PropTypes.string.isRequired,
 }
 
 

@@ -11,7 +11,7 @@ function CreativelyTitle({ title }) {
 
 // add prop types for props type-checking and intellisense
 CreativelyTitle.propTypes = {
-    title: PropTypes.string.isRequired
+   title: PropTypes.string.isRequired
 }
 
 export default CreativelyTitle;
